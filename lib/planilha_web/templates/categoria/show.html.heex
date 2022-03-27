@@ -1,0 +1,13 @@
+<h1>Show Categoria</h1>
+
+<ul>
+
+  <li>
+    <strong>Descricao:</strong>
+    <%= @categoria.descricao %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.categoria_path(@conn, :edit, @categoria) %></span> |
+<span><%= link "Back", to: Routes.categoria_path(@conn, :index) %></span>

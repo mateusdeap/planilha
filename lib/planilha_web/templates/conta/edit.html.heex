@@ -1,0 +1,5 @@
+<h1>Edit Conta</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.conta_path(@conn, :update, @conta)) %>
+
+<span><%= link "Back", to: Routes.conta_path(@conn, :index) %></span>

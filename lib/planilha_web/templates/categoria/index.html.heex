@@ -1,0 +1,26 @@
+<h1>Listing Categorias</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descricao</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for categoria <- @categorias do %>
+    <tr>
+      <td><%= categoria.descricao %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.categoria_path(@conn, :show, categoria) %></span>
+        <span><%= link "Edit", to: Routes.categoria_path(@conn, :edit, categoria) %></span>
+        <span><%= link "Delete", to: Routes.categoria_path(@conn, :delete, categoria), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Categoria", to: Routes.categoria_path(@conn, :new) %></span>

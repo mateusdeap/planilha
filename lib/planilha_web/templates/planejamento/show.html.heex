@@ -1,0 +1,33 @@
+<h1>Show Planejamento</h1>
+
+<ul>
+
+  <li>
+    <strong>Mes:</strong>
+    <%= @planejamento.mes %>
+  </li>
+
+  <li>
+    <strong>Gasto total planejado:</strong>
+    <%= @planejamento.gasto_total_planejado %>
+  </li>
+
+  <li>
+    <strong>Gasto total atual:</strong>
+    <%= @planejamento.gasto_total_atual %>
+  </li>
+
+  <li>
+    <strong>Renda total panejada:</strong>
+    <%= @planejamento.renda_total_panejada %>
+  </li>
+
+  <li>
+    <strong>Renda total atual:</strong>
+    <%= @planejamento.renda_total_atual %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.planejamento_path(@conn, :edit, @planejamento) %></span> |
+<span><%= link "Back", to: Routes.planejamento_path(@conn, :index) %></span>
