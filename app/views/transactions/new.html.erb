@@ -1,0 +1,11 @@
+<%= form_with model: @transaction do |form| %>
+  <div>
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+  </div>
+  <div>
+    <%= form.label :date %>
+    <%= form.datetime_field :date %>
+  </div>
+  <%= form.submit %>
+<% end %>
