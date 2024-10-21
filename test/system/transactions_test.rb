@@ -2,13 +2,18 @@ require "application_system_test_case"
 
 class TransactionsTest < ApplicationSystemTestCase
   test "visiting the index" do
-    visit transactions_url
+    visit root_url
+
+    expenses = Transaction.expenses
+    revenues = Transaction.revenues
 
     assert_selector "h1", text: "Transactions"
+    assert_selector "h2", text: "Total Revenue"
+    assert_selector "h2", text: "Total Expenses: "
   end
 
   test "adding an expense transaction" do
-    visit transactions_url
+    visit root_url
 
     click_on "Add Expense"
 
@@ -24,7 +29,7 @@ class TransactionsTest < ApplicationSystemTestCase
   end
 
   test "adding a revenue transaction" do
-    visit transactions_url
+    visit root_url
 
     click_on "Add Revenue"
 

@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "transactions#index"
-  resources :transactions
-  resources :expenses
-  resources :revenues
+  namespace :transactions do
+    resources :expenses
+    resources :revenues
+  end
 end
