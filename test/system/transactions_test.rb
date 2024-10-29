@@ -4,12 +4,12 @@ class TransactionsTest < ApplicationSystemTestCase
   test "visiting the index" do
     visit root_url
 
-    expenses = Transaction.expenses
-    revenues = Transaction.revenues
+    expenses = Transaction.where(kind: :expense).sum(&:amount)
+    revenues = Transaction.where(kind: :revenues).sum(&:amount)
 
     assert_selector "h1", text: "Transactions"
-    assert_selector "h2", text: "Total Revenue"
-    assert_selector "h2", text: "Total Expenses: "
+    assert_selector "h2", text: "Total Revenue: #{revenues}"
+    assert_selector "h2", text: "Total Expenses: #{expenses}"
   end
 
   test "adding an expense transaction" do
